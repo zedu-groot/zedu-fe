@@ -110,11 +110,13 @@ const MessageAuthor = ({
     findOrgMemberForUser(mentionOrgMembers, item);
   const authorId = item?.user_id;
   const currentUserId = user?.user_id ?? user?.id;
+  const isCurrentUser =
+    authorId != null && String(authorId) === String(currentUserId);
+  const currentUserStatus = isCurrentUser ? getUserStatus(user) : null;
   const statusSource =
-    member ??
-    (authorId != null && String(authorId) === String(currentUserId)
+    isCurrentUser && currentUserStatus
       ? user
-      : null);
+      : (member ?? (isCurrentUser ? user : null));
   const status = getUserStatus(statusSource);
   const statusIcon = status?.emoji || (status?.text ? "💬" : "");
   const statusLabel = status?.text || "Custom status";
