@@ -90,6 +90,22 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Lato";
+  src: url("../../public/fonts/lato-700-latin.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../../public/fonts/lato-900-latin.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   font-family: "Lato" !important;
   overflow-x: hidden;
