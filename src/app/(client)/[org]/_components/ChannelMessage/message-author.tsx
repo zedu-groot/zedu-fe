@@ -39,6 +39,15 @@ const formatStatusExpiry = (statusSource?: Record<string, unknown> | null) => {
     return simpleClearLabels[normalizedTimeout];
   }
 
+  const durationMatch = normalizedTimeout.match(
+    /^(\d+)\s*(minute|minutes|hour|hours|day|days|week|weeks)$/
+  );
+  if (durationMatch) {
+    const [, amount, unit] = durationMatch;
+    const singularUnit = unit.endsWith("s") ? unit.slice(0, -1) : unit;
+    return `Clears in ${amount} ${Number(amount) === 1 ? singularUnit : `${singularUnit}s`}`;
+  }
+
   const rawExpiry =
     statusSource?.status_expiry ?? statusSource?.expiry ?? timeout;
 

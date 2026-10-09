@@ -17,13 +17,17 @@ const getStatusFieldsFromPayload = (statusPayload: {
   text?: string;
   emoji?: string;
   online?: boolean;
-  expiry?: number;
+  expiry?: number | string;
+  status_expiry?: number | string;
+  timeout?: string;
+  status_timeout?: string;
   visibility?: string;
 }) => ({
   text: statusPayload?.text ?? "",
   icon: statusPayload?.emoji ?? "",
   online: statusPayload?.online,
-  status_expiry: statusPayload?.expiry,
+  status_expiry: statusPayload?.status_expiry ?? statusPayload?.expiry,
+  status_timeout: statusPayload?.status_timeout ?? statusPayload?.timeout,
   status_visibility: statusPayload?.visibility,
 });
 
