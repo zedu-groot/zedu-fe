@@ -29,13 +29,14 @@ const getStatusFieldsFromPayload = (statusPayload: {
 
 export default function StatusConnection() {
   const { state, dispatch } = useContext(DataContext);
-  const { orgId, user, orgMembers } = state;
+  const { orgId, user, orgMembers, mentionOrgMembers } = state;
   const params = usePathname();
 
   const routeUrl = `${CLIENT_URL}${params}`;
   const audioPlayer = useRef<HTMLAudioElement | null>(null);
   const userRef = useRef(user);
   const orgMembersRef = useRef(orgMembers);
+  const mentionOrgMembersRef = useRef(mentionOrgMembers);
 
   useEffect(() => {
     userRef.current = user;
@@ -44,6 +45,10 @@ export default function StatusConnection() {
   useEffect(() => {
     orgMembersRef.current = orgMembers;
   }, [orgMembers]);
+
+  useEffect(() => {
+    mentionOrgMembersRef.current = mentionOrgMembers;
+  }, [mentionOrgMembers]);
 
   // centrifugo connection for notification
   useEffect(() => {
@@ -110,6 +115,25 @@ export default function StatusConnection() {
             ...statusFields,
           };
           dispatch({ type: ACTIONS.ORG_MEMBERS, payload: updatedMembers });
+        }
+
+        const mentionMembers = mentionOrgMembersRef.current || [];
+        const mentionMemberIndex = mentionMembers.findIndex(
+          (member: { id?: string; user_id?: string }) =>
+            String(member.id) === String(targetUserId) ||
+            String(member.user_id) === String(targetUserId)
+        );
+
+        if (mentionMemberIndex !== -1) {
+          const updatedMentionMembers = [...mentionMembers];
+          updatedMentionMembers[mentionMemberIndex] = {
+            ...updatedMentionMembers[mentionMemberIndex],
+            ...statusFields,
+          };
+          dispatch({
+            type: ACTIONS.MENTION_ORG_MEMBERS,
+            payload: updatedMentionMembers,
+          });
         }
       }
 
