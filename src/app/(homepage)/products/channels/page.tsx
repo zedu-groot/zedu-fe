@@ -108,7 +108,7 @@ const otherFeatures = [
   {
     icon: "/images/homepage/icons/whiteboard.png",
     title: "Assignments",
-    description: "Share and organize learning materials and resources.",
+    description: "Create assignments and manage student submissions.",
   },
 ];
 
