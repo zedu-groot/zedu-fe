@@ -25,7 +25,7 @@ export type PricingComparisonSection = {
 
 export const pricingComparisonPlans: PricingComparisonPlan[] = [
   { key: "starter", label: "Starter" },
-  { key: "growth", label: "Growth" },
+  { key: "pro", label: "Pro" },
   { key: "enterprise", label: "Enterprise" },
 ];
 
@@ -41,7 +41,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: 1,
-          growth: "Unlimited",
+          pro: "Unlimited",
           enterprise: "Unlimited",
         },
       },
@@ -51,7 +51,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: 3,
-          growth: "Unlimited",
+          pro: "Unlimited",
           enterprise: "Unlimited",
         },
       },
@@ -61,7 +61,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: "Up to 5",
-          growth: "Up to 50",
+          pro: "Up to 50",
           enterprise: "Unlimited",
         },
       },
@@ -71,7 +71,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: "Limited",
-          growth: "Up to 500",
+          pro: "Up to 500",
           enterprise: "Custom",
         },
       },
@@ -81,7 +81,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: true,
-          growth: true,
+          pro: true,
           enterprise: true,
         },
       },
@@ -91,7 +91,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: true,
-          growth: true,
+          pro: true,
           enterprise: true,
         },
       },
@@ -108,7 +108,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: true,
-          growth: true,
+          pro: true,
           enterprise: true,
         },
       },
@@ -118,7 +118,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: true,
-          growth: true,
+          pro: true,
           enterprise: true,
         },
       },
@@ -128,7 +128,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: true,
-          growth: true,
+          pro: true,
           enterprise: true,
         },
       },
@@ -138,7 +138,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: false,
-          growth: true,
+          pro: true,
           enterprise: true,
         },
       },
@@ -148,7 +148,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: false,
-          growth: true,
+          pro: true,
           enterprise: true,
         },
       },
@@ -158,7 +158,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: false,
-          growth: true,
+          pro: true,
           enterprise: true,
         },
       },
@@ -175,7 +175,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: true,
-          growth: true,
+          pro: true,
           enterprise: true,
         },
       },
@@ -185,7 +185,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: true,
-          growth: true,
+          pro: true,
           enterprise: true,
         },
       },
@@ -195,7 +195,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: true,
-          growth: true,
+          pro: true,
           enterprise: true,
         },
       },
@@ -205,7 +205,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: false,
-          growth: true,
+          pro: true,
           enterprise: true,
         },
       },
@@ -215,7 +215,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: "Limited",
-          growth: true,
+          pro: true,
           enterprise: "Advanced",
         },
       },
@@ -232,7 +232,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: false,
-          growth: true,
+          pro: true,
           enterprise: true,
         },
       },
@@ -242,7 +242,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: "Limited",
-          growth: true,
+          pro: true,
           enterprise: "Advanced",
         },
       },
@@ -252,7 +252,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: false,
-          growth: false,
+          pro: false,
           enterprise: true,
         },
       },
@@ -262,7 +262,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: false,
-          growth: false,
+          pro: false,
           enterprise: true,
         },
       },
@@ -279,7 +279,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: "Basic",
-          growth: "Advanced",
+          pro: "Advanced",
           enterprise: "Full",
         },
       },
@@ -289,7 +289,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: true,
-          growth: true,
+          pro: true,
           enterprise: true,
         },
       },
@@ -299,7 +299,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: false,
-          growth: true,
+          pro: true,
           enterprise: true,
         },
       },
@@ -309,7 +309,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: false,
-          growth: "Limited",
+          pro: "Limited",
           enterprise: "Full",
         },
       },
@@ -319,7 +319,7 @@ export const pricingComparisonSections: PricingComparisonSection[] = [
         showInfoIcon: true,
         values: {
           starter: false,
-          growth: false,
+          pro: false,
           enterprise: true,
         },
       },
