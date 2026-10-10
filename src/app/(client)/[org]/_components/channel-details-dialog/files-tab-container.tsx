@@ -29,11 +29,7 @@ import { getFileIconClass } from "../file-management/FileList";
 import ChannelFileMediaPreview from "./channel-file-media-preview";
 
 export type ChannelFileFilter =
-  | "all"
-  | "images"
-  | "videos"
-  | "audio"
-  | "documents";
+  "all" | "images" | "videos" | "audio" | "documents";
 
 type ChannelFileEntry = Media & {
   thread_id?: string;

@@ -15,6 +15,11 @@ const UseTextEditor = (subscription?: any) => {
 
   const editor = useEditor({
     extensions: [
+      // TODO(tiptap-deps): remove after unifying @tiptap/pm to a single
+      // version. package.json pins @tiptap/pm@2.27.2 while the other
+      // @tiptap/* packages resolved to 2.27.3, creating two copies of
+      // @tiptap/core whose private types (e.g. commandManager) mismatch.
+      // @ts-expect-error - StarterKit types from duplicate @tiptap/core copy
       StarterKit.configure({
         bulletList: {
           HTMLAttributes: { class: "list-disc pl-5" },
