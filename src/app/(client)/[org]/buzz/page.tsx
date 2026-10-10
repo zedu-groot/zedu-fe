@@ -204,8 +204,6 @@ export default function MeetingPage() {
                   {joinError}
                 </p>
               )}
-            </div>
-                
             </label>
 
             <Button
