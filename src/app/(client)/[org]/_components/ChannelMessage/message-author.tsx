@@ -26,6 +26,8 @@ type MessageAuthorProps = {
 const formatStatusExpiry = (statusSource?: Record<string, unknown> | null) => {
   const timeout = String(statusSource?.status_timeout ?? "").trim();
   const normalizedTimeout = timeout.toLowerCase().replace(/[’']/g, "'");
+  const absoluteExpiry = statusSource?.status_expiry ?? statusSource?.expiry;
+  const hasAbsoluteExpiry = absoluteExpiry != null && absoluteExpiry !== "";
   const simpleClearLabels: Record<string, string> = {
     "30 minutes": "Clears in 30 min",
     "1 hour": "Clears in 1 hour",
@@ -35,21 +37,20 @@ const formatStatusExpiry = (statusSource?: Record<string, unknown> | null) => {
     "don't clear": "Doesn’t clear",
   };
 
-  if (simpleClearLabels[normalizedTimeout]) {
+  if (!hasAbsoluteExpiry && simpleClearLabels[normalizedTimeout]) {
     return simpleClearLabels[normalizedTimeout];
   }
 
   const durationMatch = normalizedTimeout.match(
     /^(\d+)\s*(minute|minutes|hour|hours|day|days|week|weeks)$/
   );
-  if (durationMatch) {
+  if (!hasAbsoluteExpiry && durationMatch) {
     const [, amount, unit] = durationMatch;
     const singularUnit = unit.endsWith("s") ? unit.slice(0, -1) : unit;
     return `Clears in ${amount} ${Number(amount) === 1 ? singularUnit : `${singularUnit}s`}`;
   }
 
-  const rawExpiry =
-    statusSource?.status_expiry ?? statusSource?.expiry ?? timeout;
+  const rawExpiry = absoluteExpiry ?? timeout;
 
   if (rawExpiry != null && rawExpiry !== "") {
     const numericExpiry = Number(rawExpiry);
@@ -128,7 +129,7 @@ const MessageAuthor = ({
     <div className={cn("flex min-w-0 items-center gap-1", className)}>
       <span
         className={cn(
-          "shrink-0 text-[15px] font-bold text-[#1D2939]",
+          "min-w-0 shrink truncate text-[15px] font-bold text-[#1D2939]",
           onClick && "cursor-pointer",
           nameClassName
         )}

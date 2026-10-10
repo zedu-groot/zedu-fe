@@ -118,6 +118,7 @@ export default function StatusConnection() {
             ...updatedMembers[memberIndex],
             ...statusFields,
           };
+          orgMembersRef.current = updatedMembers;
           dispatch({ type: ACTIONS.ORG_MEMBERS, payload: updatedMembers });
         }
 
@@ -134,6 +135,7 @@ export default function StatusConnection() {
             ...updatedMentionMembers[mentionMemberIndex],
             ...statusFields,
           };
+          mentionOrgMembersRef.current = updatedMentionMembers;
           dispatch({
             type: ACTIONS.MENTION_ORG_MEMBERS,
             payload: updatedMentionMembers,
