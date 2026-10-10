@@ -7,7 +7,8 @@ const AVATAR_ADEYEMI = "/images/homepage/products/channels/avatar-adeyemi.jpg";
 const AVATAR_CHIAMAKA =
   "/images/homepage/products/channels/avatar-chiamaka.jpg";
 
-const cardShadow = "shadow-[0_20px_40px_rgba(31,37,48,0.10)]";
+// Shared surface for the white cards that float above the tinted panels.
+const raisedCard = "bg-white shadow-[0_20px_40px_rgba(31,37,48,0.10)]";
 
 const ChannelGroup = ({ label }: { label: string }) => (
   <p className="px-2.5 pb-1 pt-3 text-[11px] font-bold tracking-[0.08em] text-[#5A6170] first:pt-1">
@@ -30,7 +31,7 @@ const OrganiseVisual = () => (
   <div
     className={cn(
       "flex w-full max-w-[380px] flex-col gap-1.5 rounded-[18px] border border-slate-200 bg-white p-5 text-[15px]",
-      cardShadow
+      raisedCard
     )}
   >
     <ChannelGroup label="COURSES" />
@@ -81,7 +82,7 @@ const ThreadsVisual = () => (
   <div
     className={cn(
       "flex w-full max-w-[420px] flex-col gap-4 rounded-[18px] border border-slate-200 bg-white p-[22px]",
-      cardShadow
+      raisedCard
     )}
   >
     <ThreadMessage
@@ -110,7 +111,7 @@ const AnnouncementVisual = () => (
   <div
     className={cn(
       "flex w-full max-w-[420px] flex-col gap-3 rounded-[18px] border border-[#F2E2C6] bg-white p-[22px]",
-      cardShadow
+      raisedCard
     )}
   >
     <p className="flex items-center gap-2 text-xs font-bold tracking-[0.06em] text-[#9A5800]">
@@ -134,7 +135,7 @@ const sizeRows = [
   {
     name: "faculty-of-science",
     members: "2,400 members",
-    indent: cn("ml-12", cardShadow),
+    indent: cn("ml-12", raisedCard),
   },
 ];
 
