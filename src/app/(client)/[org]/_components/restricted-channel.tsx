@@ -42,7 +42,7 @@ const RestrictedChannel = () => {
         </div>
         <span>
           <strong className="font-semibold text-black dark:text-zinc-100">
-            Only admins can send post in this channel.
+            Only admins can post in this channel.
           </strong>{" "}
           <span className="text-[#667085] dark:text-zinc-400">
             You can only read messages
